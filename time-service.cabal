@@ -10,12 +10,16 @@ library
   exposed-modules:
       App
   build-depends:
-      base >= 4.8 && < 5
-    , transformers
-    , time
-    , aeson == 0.9.*
-    , wai
-    , scotty >= 0.5
+                  base >= 4.8 && < 5
+                , aeson == 0.9.*
+                , bytestring >= 0.10.6.0
+                , hspec >= 2.2.1
+                , hspec-wai >= 0.6.4
+                , hspec-wai-json >= 0.6.1
+                , scotty >= 0.5
+                , time
+                , transformers
+                , wai
 
 executable time-service
   hs-source-dirs:
@@ -23,10 +27,14 @@ executable time-service
   main-is:
       Main.hs
   build-depends:
-      base >= 4.8 && < 5
-    , time-service
-    , time
-    , warp
+                  base >= 4.8 && < 5
+                , bytestring >= 0.10.6.0
+                , hspec >= 2.2.1
+                , hspec-wai >= 0.6.4
+                , hspec-wai-json >= 0.6.1
+                , time
+                , time-service
+                , warp
 
 test-suite spec
   type:
@@ -36,14 +44,15 @@ test-suite spec
   main-is:
       Spec.hs
   build-depends:
-      base >= 4.8 && < 5
-    , time-service
-    , bytestring
-    , http-types
-    , wai
-    , HUnit
-    , QuickCheck
-    , hspec >= 1.5.3
-    , hspec-wai >= 0.6.4
-    , hspec-wai-json
-    , wai-extra >= 3
+                  base >= 4.8 && < 5
+                , HUnit
+                , QuickCheck >= 2.8.1
+                , bytestring >= 0.10.6.0
+                , hspec >= 2.2.1
+                , hspec-wai >= 0.6.4
+                , hspec-wai-json >= 0.6.1
+                , http-types
+                , time
+                , time-service
+                , wai
+                , wai-extra >= 3
